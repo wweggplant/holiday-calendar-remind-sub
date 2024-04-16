@@ -6,7 +6,7 @@ export default function Home() {
     <>
       <nav className="w-full bg-white shadow">
         <div className="container mx-auto px-4 py-4 flex justify-end items-center">
-          <Link href="https://github.com/your-username/your-repository" passHref className="text-gray-500 hover:text-gray-600" aria-label="GitHub Project">
+          <Link href="https://github.com/wweggplant/holiday-calendar-remind-sub" passHref className="text-gray-500 hover:text-gray-600" aria-label="GitHub Project">
             <Image src="/github-mark.svg" alt="GitHub Logo" width={32} height={32} />
           </Link>
         </div>
