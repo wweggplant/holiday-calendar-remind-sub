@@ -4,7 +4,7 @@ import datetime as dt
 import logging
 from icalendar import Calendar, Event
 import pytz
-
+from pytz import timezone
 # Configure logging
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
 
@@ -55,12 +55,17 @@ def create_ics_file(reminders, filename="bookTrain.ics"):
     cal = Calendar()
     cal.add('prodid', '-//Custom Calendar//mxm.dk//')
     cal.add('version', '2.0')
-    
+    cst_tz = timezone('Asia/Shanghai')  # 定义CST时区
     for reminder in reminders:
+        # 将提醒时间从CST转换为UTC
+        event_start = cst_tz.localize(dt.datetime.combine(reminder['reminder_date'], dt.time(11, 50, 0)))
+        event_end = cst_tz.localize(dt.datetime.combine(reminder['reminder_date'], dt.time(16, 10, 0)))
+        event_start_utc = event_start.astimezone(pytz.utc)
+        event_end_utc = event_end.astimezone(pytz.utc)
         event = Event()
         event.add('summary', f'火车票提醒 - 订票日期: {reminder["book_date"].isoformat()}')
-        event.add('dtstart', dt.datetime.combine(reminder['reminder_date'], dt.time(11, 55, 0), tzinfo=pytz.utc))
-        event.add('dtend', dt.datetime.combine(reminder['reminder_date'], dt.time(16, 10, 0), tzinfo=pytz.utc))
+        event.add('dtstart', event_start_utc)
+        event.add('dtend', event_end_utc)
         event.add('dtstamp', dt.datetime.now(pytz.utc))
         event['uid'] = f'{reminder["reminder_date"].isoformat()}-weiainijiujiu@126.com'
         cal.add_component(event)
