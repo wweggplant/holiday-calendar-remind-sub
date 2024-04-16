@@ -1,36 +1,19 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# 节假日调休火车票预定提醒
 
-## Getting Started
+经常需要操心在预定节假日的火车票，导入这个日历后，会在提醒节假日开始前一天和结束后一天，还有调休当天的火车票。
 
-First, run the development server:
+## 使用
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+手机访问[网页](https://holiday-calendar-remind-sub.vercel.app/)或者扫下面二维码，点击导入日历，然后会调起日历应用，导入日历即可。
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+![image](https://github.com/wweggplant/holiday-calendar-remind-sub/assets/4509523/815126cc-1e94-4f33-a038-7ba861a65bda)
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+## 二改
 
-## Learn More
+代码在`script/generate_book_train_ics.py`中，运行即可，有问题提issue
 
-To learn more about Next.js, take a look at the following resources:
+## 说明
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+- 节假日和调休数据来自[china-holiday-calender](https://github.com/lanceliao/china-holiday-calender)
+- 火车票预定间隔默认14天
