@@ -1,12 +1,10 @@
 name: Generate and commit bookTrain.ics
 
 on:
-  push:
-    branches:
-      - master
+  workflow_dispatch:
   schedule:
     # At 00:00 on December 20th, translated to UTC time
-    - cron:  '00 16 19 12 *'
+    - cron: '00 16 19 12 *'
 
 jobs:
   generate_and_commit_file:
