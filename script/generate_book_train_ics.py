@@ -10,7 +10,7 @@ logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(
 
 # Constant for the number of days before an event to create a reminder
 BOOKING_DAYS = 14
-DEFAULT_DIR = "../public/"
+DEFAULT_DIR = "./"
 # Helper function to fetch holidays data
 def fetch_holiday_booking_dates(year):
     url = 'https://cdn.jsdelivr.net/gh/lanceliao/china-holiday-calender/holidayAPI.json'

@@ -1,0 +1,48 @@
+name: Generate and commit bookTrain.ics
+
+on:
+  push:
+    branches:
+      - workflow-test  # Or any branch where you want to trigger this action
+
+jobs:
+  generate_and_commit_file:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v3
+      
+    - name: Set up Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.x'  # Specify the Python version
+
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install -r script/requirements.txt
+
+    - name: Run Python script
+      run: |
+        python script/generate_book_train_ics.py
+        echo "Listing current directory contents:"
+        ls -l
+        mv bookTrain.ics public/
+        if compgen -G "bookTrain-*.ics" > /dev/null; then
+          mv bookTrain-*.ics public/
+        fi
+        echo "Listing public directory contents:"
+        ls -l public/
+
+    - name: Commit and push if changes
+      run: |
+        git config --global user.email "weiainijiujiu@126.com"
+        git config --global user.name "wweggplant"
+        git config --global push.default current
+        git add public/bookTrain.ics
+        if compgen -G "public/bookTrain-*.ics" > /dev/null; then
+            git add public/bookTrain-*.ics
+        fi
+        git commit -m "Automatically updated bookTrain files" || exit 0
+        git push
