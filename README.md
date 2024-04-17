@@ -11,7 +11,7 @@
 
 ## 二改
 
-代码在`script/generate_book_train_ics.py`中，运行即可，有问题提issue
+代码在`script/generate_next_year_book_train_ics.py`中，运行即可，有问题提issue
 
 ## 说明
 

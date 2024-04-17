@@ -3,7 +3,10 @@ name: Generate and commit bookTrain.ics
 on:
   push:
     branches:
-      - workflow-test  # Or any branch where you want to trigger this action
+      - master
+  schedule:
+    # At 00:00 on December 20th, translated to UTC time
+    - cron:  '00 16 19 12 *'
 
 jobs:
   generate_and_commit_file:
@@ -16,7 +19,7 @@ jobs:
     - name: Set up Python
       uses: actions/setup-python@v4
       with:
-        python-version: '3.x'  # Specify the Python version
+        python-version: '3.x'
 
     - name: Install dependencies
       run: |
@@ -25,15 +28,11 @@ jobs:
 
     - name: Run Python script
       run: |
-        python script/generate_book_train_ics.py
-        echo "Listing current directory contents:"
-        ls -l
+        python script/generate_next_year_book_train_ics.py
         mv bookTrain.ics public/
         if compgen -G "bookTrain-*.ics" > /dev/null; then
           mv bookTrain-*.ics public/
         fi
-        echo "Listing public directory contents:"
-        ls -l public/
 
     - name: Commit and push if changes
       run: |

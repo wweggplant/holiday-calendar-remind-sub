@@ -76,7 +76,7 @@ def create_ics_file(reminders, filename="bookTrain.ics"):
 
 # Main function to run as a GitHub Actions job
 def main():
-    year = dt.datetime.now().year
+    year = dt.datetime.now().year + 1 # next year
     sorted_dates = compile_and_sort_dates(year)
     reminder_dates = calculate_reminder_dates(sorted_dates)
     
