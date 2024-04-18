@@ -22,8 +22,13 @@ export default function Home() {
           <Link href='/bookTrain.ics' className="inline-block bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline transition-colors duration-150 ease-in-out">
             点击导入日历
           </Link>
-          <div className="mt-10 relative w-full max-w-md h-auto">
-            <Image alt="海报图" layout='responsive' width={800} height={800} src={'/post.webp'} priority />
+          <div className="mt-10 w-full max-w-100 overflow-x-auto whitespace-nowrap overflow-x-visible flex justify-center items-center">
+            <div className="inline-block w-auto sm:flex-shrink-0 relative sm:max-w-[300px]">
+              <Image alt="示例图1" layout='responsive' width={292.5} height={633} src={'/p1.png'} priority />
+            </div>
+            <div className="inline-block w-auto sm:flex-shrink-0 relative sm:max-w-[300px] ml-1">
+              <Image alt="示例图2" layout='responsive' width={292.5} height={633} src={'/p2.png'} priority />
+            </div>
           </div>
         </div>
       </div>

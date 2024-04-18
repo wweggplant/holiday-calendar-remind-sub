@@ -8,12 +8,18 @@
 
 ![image](https://github.com/wweggplant/holiday-calendar-remind-sub/assets/4509523/815126cc-1e94-4f33-a038-7ba861a65bda)
 
+效果如下, 配合[china-holiday-calender](https://github.com/lanceliao/china-holiday-calender)使用更佳
 
-## 二改
 
-代码在`script/generate_next_year_book_train_ics.py`中，运行即可，有问题提issue
+![订阅日历效果](./public/p1.png)
+![订阅日历效果](./public/p2.png)
 
 ## 说明
 
 - 节假日和调休数据来自[china-holiday-calender](https://github.com/lanceliao/china-holiday-calender)
 - 火车票预定间隔默认14天
+- action会在每年的的12月20日生成下一年的日历
+
+## 二改
+
+代码在`script/generate_next_year_book_train_ics.py`中，运行即可，有问题提issue

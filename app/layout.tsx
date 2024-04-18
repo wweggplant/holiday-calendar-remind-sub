@@ -18,6 +18,7 @@ export default function RootLayout({
     <html lang="zh-cn">
       <head>
         <title>Subscribe to Calendar</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </head>
       <body className={inter.className}>{children}</body>
