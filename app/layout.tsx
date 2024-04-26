@@ -20,6 +20,8 @@ export default function RootLayout({
         <title>Subscribe to Calendar</title>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
+        <meta name="description" content="节假日调休火车票预定提醒是一个帮助你提前预定节假日火车票的工具。导入这个日历后，会在提醒节假日开始前一天和结束后一天，还有调休当天的火车票。" />
+        <meta name="keywords" content="节假日,调休,火车票,预定,提醒,日历" />
       </head>
       <body className={inter.className}>{children}</body>
     </html>
