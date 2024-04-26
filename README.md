@@ -4,9 +4,10 @@
 
 ## 使用
 
-手机访问[网页](https://holiday-calendar-remind-sub.vercel.app/)或者扫下面二维码，点击导入日历，然后会调起日历应用，导入日历即可。
+手机访问[网页](https://holiday-sub-cal.1338994.xyz/)或者扫下面二维码，点击导入日历，然后会调起日历应用，导入日历即可。
 
-![image](https://github.com/wweggplant/holiday-calendar-remind-sub/assets/4509523/815126cc-1e94-4f33-a038-7ba861a65bda)
+![image](https://github.com/wweggplant/holiday-sub-cal/assets/4509523/2778259d-a0d8-4ae1-901b-8639ed9d02f5)
+
 
 效果如下, 配合[china-holiday-calender](https://github.com/lanceliao/china-holiday-calender)使用更佳
 
